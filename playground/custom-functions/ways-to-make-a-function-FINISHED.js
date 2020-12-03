@@ -13,7 +13,7 @@
 // };
 
 /* eslint-disable */
-const inchToCM = inches => inches * 2.54;
+//const inchToCM = inches => inches * 2.54;
 
 // function add(a, b = 3) {
 //   const total = a + b;
@@ -32,7 +32,7 @@ const inchToCM = inches => inches * 2.54;
 //   return baby;
 // }
 
-const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
+//const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 
 
 // IIFE
