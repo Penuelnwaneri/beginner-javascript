@@ -47,6 +47,7 @@ window.addEventListener(
   { capture: true }
 );
 
+// Now in our javascript, grab it and listen to the `mousemove` event.
 const photoEl = document.querySelector(".photo");
 
 photoEl.addEventListener("mouseenter", (e) => {
