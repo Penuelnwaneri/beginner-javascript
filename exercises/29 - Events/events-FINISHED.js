@@ -66,4 +66,6 @@ Modify the code as shown below so we are passing the event as a parameter to the
 ```js
 photoEl.addEventListener("mousemove", function(e) ...
 ```
+
+Now, whenever you move your mouse anywhere over the image, that event is fired millions of times because it is triggered on every movement of the mouse.
 **/
