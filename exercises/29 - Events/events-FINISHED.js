@@ -50,7 +50,20 @@ window.addEventListener(
 // Now in our javascript, grab it and listen to the `mousemove` event.
 const photoEl = document.querySelector(".photo");
 
-photoEl.addEventListener("mouseenter", (e) => {
+photoEl.addEventListener("mouseenter",function
+} (e) => {
   console.log(e.currentTarget);
   console.log(this);
 });
+
+/**If you add the following, you will get an error in the console saying 
+>Uncaught ReferenceError: e is not defined
+
+That is because we forgot to pass the event parameter. 
+
+Modify the code as shown below so we are passing the event as a parameter to the anonymous function.
+
+```js
+photoEl.addEventListener("mousemove", function(e) ...
+```
+**/
