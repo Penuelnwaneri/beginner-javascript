@@ -12,7 +12,7 @@
   <script>
 const makePizza = (toppings) => {
   const pizzaPromise = new Promise((resolve,reject)=>{
-    resolve(`Here is your 🍕 with the toppings ${toppings.join(' ')}`);
+    resolve(`Here is your 🍕 with the toppings ${toppings.join('')}`);
   });
   return pizzaPromise;
 }
