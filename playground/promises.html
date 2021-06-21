@@ -35,7 +35,10 @@ const makePizza = (toppings) => {
 }
 const pepperoniPromise = makePizza(['pepperoni']);
 const canadianPromise = makePizza(['pepperoni','mushroom', 'onion'])
-console.log(pepperoniPromise,canadianPromise)
+
+pepperoniPromise.then((pizza)=>{
+  console.log('Ah i got it')
+})
   </script>
 </body>
 
