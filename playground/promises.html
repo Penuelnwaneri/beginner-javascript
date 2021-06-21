@@ -10,9 +10,9 @@
 
 <body>
   <script>
-const makePizza = () => {
+const makePizza = (toppings) => {
   const pizzaPromise = new Promise((resolve,reject)=>{
-    resolve();
+    resolve(`Here is your 🍕 with the toppings ${toppings.join('')}`);
   });
   return pizzaPromise;
 }
