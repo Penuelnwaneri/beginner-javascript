@@ -89,6 +89,12 @@ pepperoniPromise.then((pizza)=>{
   el.textContent = pizza;
 })
 console.log('finishing')
+
+//We will look at how we can use async/await to actually do that sequentially if we would like to, but for now we know we can chain a .then() onto it.
+
+//Why is that any more useful than a regular callback?
+
+//That is useful because let's say we wanted to make multiple pizzas one after the other, and we have an oven that can only cook one at at time.
   </script>
 </body>
 
