@@ -234,9 +234,28 @@ const dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3])
 
  // That makes one big promise which then you can call .then() on and we get passed the pizzas which we will log.
 
-dinnerPromise.then(pizzas => {
+/**dinnerPromise.then(pizzas => {
   console.log(pizzas);
-})
+})**/
+
+//Now we wait for all 3 to be finished, and we get an array of all 3 of them
+
+// If you wanted the first pizza it would be pizza[0].
+
+// A pretty common thing to do is destructure the pizzas.
+
+// Let's convert the arrow function to a regular function to make it clearer to understand.
+
+// We will use array destructuring. Let's call the first pizza hottie, second one garbagePail and third one hamAndCheese.
+
+// Those will now be equal to 3 variables which we can now log or use however we want like so 👇
+
+
+dinnerPromise.then(function (pizzas) {
+  [hottie, garbagePail, hamAndCheese] = pizzas;
+  console.log(hottie, garbagePail, hamAndCheese);
+}); 
+
 
   </script>
 </body>
