@@ -27,10 +27,12 @@
   <script>
   const el = document.querySelector(".myclass")
   console.log(el)
+
 const makePizza = (toppings) => {
   const pizzaPromise = new Promise((resolve,reject)=>{
-    resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
-  });
+     //wait 1 second for the pizza to cook
+   setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+  });}, 1000);
   return pizzaPromise;
 }
 const pepperoniPromise = makePizza(['pepperoni']);
