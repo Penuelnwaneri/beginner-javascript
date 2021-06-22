@@ -101,7 +101,7 @@ console.log('finishing')
 // We can chain a .then() immediately onto it (because makePizza returns a promise), which gives a function that has a pizza. LLog the pizza so that we know that it still works.
 
 //The neat thing is if from this then() we return another makePizza, you can then chain another .then() on that function.
-
+/**
 makePizza(['pepperoni','ham']).then((pizza) => {
   console.log(pizza)
   return makePizza(['ham','cheese']);
@@ -117,13 +117,30 @@ makePizza(['pepperoni','ham']).then((pizza) => {
   }).then((pizza) => {
     console.log(pizza)
   })
-  
+  **/
   // As you can see first we get one pizza and then after a second we see the other pizza logged to the console.
 
 
 //Unlike what we were doing the lesson where we were adding and removing classes which were all nested in callback hell, this chaining of then is the promise land and it allows us to keep all of our logic one level deep.
 
 //The downside to that is if you had a log of First and After all our promise chaining, both logs would execute before any of our pizzas are logged.
+console.log('first')
+makePizza(['pepperoni','ham']).then((pizza) => {
+  console.log(pizza)
+  return makePizza(['ham','cheese']);
+}).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['hot peppers','onions','feta'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['pineapple'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
+  }).then((pizza) => {
+    console.log(pizza)
+  })
+  console.log('right after')
 
 
   </script>
