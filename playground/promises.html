@@ -113,9 +113,18 @@ makePizza(['pepperoni','ham']).then((pizza) => {
     return makePizza(['pineapple'])
   }).then((pizza) => {
     console.log(pizza)
+    return makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
+  }).then((pizza) => {
+    console.log(pizza)
   })
   
   // As you can see first we get one pizza and then after a second we see the other pizza logged to the console.
+
+
+//Unlike what we were doing the lesson where we were adding and removing classes which were all nested in callback hell, this chaining of then is the promise land and it allows us to keep all of our logic one level deep.
+
+//The downside to that is if you had a log of First and After all our promise chaining, both logs would execute before any of our pizzas are logged.
+
 
   </script>
 </body>
