@@ -276,6 +276,11 @@ dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
 
 const firstPizzaPromise = Promise.race([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
 
+firstPizzaPromise.then(pizza => {
+  console.log('You must be hungry, here is the first one ready');
+  console.log(pizza);
+})
+
   </script>
 </body>
 
