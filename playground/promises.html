@@ -269,6 +269,13 @@ dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
 // To reiterate, Promise.all() will take all of your promises and will only resolve when all 3 of the sub-promises have been resolved themselves.
 
 
+// Promise.race()
+//Similarly there is Promise.race(). Let's say someone is really hungry and they will take whichever pizza the first pizza is that is ready because they are very hungry.
+
+// We could do this 👇
+
+const firstPizzaPromise = Promise.race([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
+
   </script>
 </body>
 
