@@ -54,6 +54,14 @@ pepperoniPromise.then((pizza)=>{
 
 // Often what you will see is instead of making a promise and then returning it, people will often just return the promise immediately.
 
+const makePizza = (toppings) => {
+  return new Promise((resolve,reject)=>{
+    //wait 1 second for the pizza to cook
+   setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+  },5000);
+     //if something went wrong, we can reject this promise
+  });
+}
 
   </script>
 </body>
