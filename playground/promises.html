@@ -28,7 +28,10 @@
   const el = document.querySelector(".myclass")
   console.log(el)
 
-const makePizza = (toppings) => {
+/**
+ * 
+ * 
+ * const makePizza = (toppings) => {
   const pizzaPromise = new Promise((resolve,reject)=>{
     //wait 1 second for the pizza to cook
    setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
@@ -46,7 +49,7 @@ pepperoniPromise.then((pizza)=>{
   console.log(pizza)
   el.textContent = pizza;
 })
-
+***/
 // If you refresh the page, you will see in the console that we get our promise immediately and then 5 seconds after we actually have access to our pizza.
 
 
@@ -62,6 +65,16 @@ const makePizza = (toppings) => {
      //if something went wrong, we can reject this promise
   });
 }
+
+// The logic to how a Promise gets resolved is always inside of the Promise body, which in the example is the code below
+
+function(resolve, reject){
+    //wait 1 second for the pizza to cook
+    setTimeout(function(){
+      resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+    }, 1000)
+    //if something went wrong, we can reject this promise
+  }
 
   </script>
 </body>
