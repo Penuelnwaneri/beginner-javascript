@@ -124,6 +124,7 @@ makePizza(['pepperoni','ham']).then((pizza) => {
 //Unlike what we were doing the lesson where we were adding and removing classes which were all nested in callback hell, this chaining of then is the promise land and it allows us to keep all of our logic one level deep.
 
 //The downside to that is if you had a log of First and After all our promise chaining, both logs would execute before any of our pizzas are logged.
+/**
 console.log('first')
 makePizza(['pepperoni','ham']).then((pizza) => {
   console.log(pizza)
@@ -141,7 +142,7 @@ makePizza(['pepperoni','ham']).then((pizza) => {
     console.log(pizza)
   })
   console.log('right after')
-
+**/
 // We will look at how we can use async/await to get around that.
 
 // If you look at the call stack, what we know is that it first runs the function makePizza(['pepperoni']) (highlighted in the image below), which immediately returns a promise.
@@ -160,6 +161,34 @@ makePizza(['pepperoni','ham']).then((pizza) => {
 // const amountOfTimeToBake = 500 + (toppings.length * 200);
 // Now we will take that variable and pass it to our timeout.
 
+const makePizza = (toppings =[]) => {
+  return new Promise((resolve,reject)=>{
+    //wait 5 seconds for the pizza to cook
+const amountOfTimeToBake = 500 + (toppings.length * 200);
+   setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+  },amountOfTimeToBake);
+     //if something went wrong, we can reject this promise
+  });
+}
+
+
+console.log('first')
+makePizza(['pepperoni','ham']).then((pizza) => {
+  console.log(pizza)
+  return makePizza(['ham','cheese']);
+}).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['hot peppers','onions','feta'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['pineapple'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
+  }).then((pizza) => {
+    console.log(pizza)
+  })
+  console.log('right After')
   </script>
 </body>
 
