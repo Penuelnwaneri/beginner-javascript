@@ -226,6 +226,16 @@ pizzaPromise3.then(pizza => {
 
 const dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
 
+// Promise.all() is a static method because it lives on the "momma" Promise directly.
+
+// It takes an array of "baby" promises which are pizza1, pizza2, pizza3.
+
+ // That makes one big promise which then you can call .then() on and we get passed the pizzas which we will log.
+
+dinnerPromise.then(pizzas => {
+  console.log(pizzas);
+})
+
   </script>
 </body>
 
