@@ -79,6 +79,9 @@ const makePizza = (toppings) => {
   //That function will resolve or reject whenever it feels ready. In our case, we feel like the pizza is ready after one second.
 
 //So what is happening here is when we declare our pepperoniPromise we can call makePizza(['pepperoni']), which returns a promise of pizza. In order to get the pizza, the way we can access the resolved value is by chaining a .then onto it.
+const pepperoniPromise = makePizza(['pepperoni']);
+const canadianPromise = makePizza(['pepperoni','mushroom', 'onions'])
+
 console.log('starting')
 pepperoniPromise.then((pizza)=>{
   console.log('Ah i got it')
