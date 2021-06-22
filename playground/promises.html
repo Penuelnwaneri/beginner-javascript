@@ -104,7 +104,9 @@ console.log('finishing')
 
 makePizza(['pepperoni','ham']).then((pizza) => {
   console.log(pizza)
-  return makePizza(['ham','cheese'])
+  return makePizza(['ham','cheese']).then((pizza){
+    console.log(pizza)
+  })
 })
   </script>
 </body>
