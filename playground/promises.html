@@ -250,12 +250,12 @@ const dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3])
 
 // Those will now be equal to 3 variables which we can now log or use however we want like so 👇
 
-
+/**
 dinnerPromise.then(function (pizzas) {
   [hottie, garbagePail, hamAndCheese] = pizzas;
   console.log(hottie, garbagePail, hamAndCheese);
 }); 
-
+**/
 //You do not have to destructure those variables in the body of the function, you can destructure the argument directly with square brackets.
 
 dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
