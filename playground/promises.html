@@ -142,7 +142,17 @@ makePizza(['pepperoni','ham']).then((pizza) => {
   })
   console.log('right after')
 
+// We will look at how we can use async/await to get around that.
 
+// If you look at the call stack, what we know is that it first runs the function makePizza(['pepperoni']) (highlighted in the image below), which immediately returns a promise.
+
+// Then it runs the bottom log, before jumping back up to the first then() we have when the promise is resolved, and then it keeps going down the promise chain.
+
+// Let's make our makePizza function a bit more resilient, starting with toppings.
+
+// Set an empty array as the default because sometimes people might order a pizza with nothing on it.
+
+// function makePizza(toppings = [])
 
   </script>
 </body>
