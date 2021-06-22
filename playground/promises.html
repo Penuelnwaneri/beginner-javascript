@@ -256,6 +256,11 @@ dinnerPromise.then(function (pizzas) {
   console.log(hottie, garbagePail, hamAndCheese);
 }); 
 
+//You do not have to destructure those variables in the body of the function, you can destructure the argument directly with square brackets.
+
+dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
+  console.log(hottie, garbagePail, hamAndCheese);
+});
 
   </script>
 </body>
