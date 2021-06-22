@@ -59,7 +59,7 @@ pepperoniPromise.then((pizza)=>{
 
 const makePizza = (toppings) => {
   return new Promise((resolve,reject)=>{
-    //wait 1 second for the pizza to cook
+    //wait 5 second for the pizza to cook
    setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
   },5000);
      //if something went wrong, we can reject this promise
