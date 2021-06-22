@@ -79,7 +79,7 @@ const makePizza = (toppings) => {
   //That function will resolve or reject whenever it feels ready. In our case, we feel like the pizza is ready after one second.
 
 //So what is happening here is when we declare our pepperoniPromise we can call makePizza(['pepperoni']), which returns a promise of pizza. In order to get the pizza, the way we can access the resolved value is by chaining a .then onto it.
-const pepperoniPromise = makePizza(['pepperoni']);
+/**const pepperoniPromise = makePizza(['pepperoni']);
 const canadianPromise = makePizza(['pepperoni','mushroom', 'onions'])
 
 console.log('starting')
@@ -89,7 +89,7 @@ pepperoniPromise.then((pizza)=>{
   el.textContent = pizza;
 })
 console.log('finishing')
-
+**/
 //We will look at how we can use async/await to actually do that sequentially if we would like to, but for now we know we can chain a .then() onto it.
 
 //Why is that any more useful than a regular callback?
