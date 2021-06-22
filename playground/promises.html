@@ -219,6 +219,13 @@ pizzaPromise2.then(pizza => {
 pizzaPromise3.then(pizza => {
   console.log(pizza)
 })
+
+// But those are going to pop into the console in whatever order they are done, which isn't what we want. We can instead make it into a "mega promise" that we then wait upon.
+
+// If you have a few promises and all you care about is when all 3 of them are finished, you can make a mega promises, which we will call a dinnerPromise.
+
+const dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
+
   </script>
 </body>
 
