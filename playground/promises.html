@@ -107,6 +107,9 @@ makePizza(['pepperoni','ham']).then((pizza) => {
   return makePizza(['ham','cheese']);
 }).then((pizza) => {
     console.log(pizza)
+    return makePizza(['hot peppers','onions','feta'])
+  }).then((pizza) => {
+    console.log(pizza)
   })
   
   // As you can see first we get one pizza and then after a second we see the other pizza logged to the console.
