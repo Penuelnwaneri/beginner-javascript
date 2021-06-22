@@ -210,6 +210,7 @@ makePizza(['pepperoni','ham']).then((pizza) => {
   const pizzaPromise3 = makePizza(['ham', 'cheese']);
 
 // So how do we know when all of those promises are done? We could do .then() on each of them like so 👇
+/**
 pizzaPromise1.then(pizza => {
   console.log(pizza)
 })
@@ -219,6 +220,7 @@ pizzaPromise2.then(pizza => {
 pizzaPromise3.then(pizza => {
   console.log(pizza)
 })
+**/
 
 // But those are going to pop into the console in whatever order they are done, which isn't what we want. We can instead make it into a "mega promise" that we then wait upon.
 
