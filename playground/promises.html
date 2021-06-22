@@ -68,13 +68,17 @@ const makePizza = (toppings) => {
 
 // The logic to how a Promise gets resolved is always inside of the Promise body, which in the example is the code below
 
-function(resolve, reject){
+/**function(resolve, reject){
     //wait 1 second for the pizza to cook
     setTimeout(function(){
       resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
     }, 1000)
     //if something went wrong, we can reject this promise
   }
+  **/
+  //That function will resolve or reject whenever it feels ready. In our case, we feel like the pizza is ready after one second.
+
+//So what is happening here is when we declare our pepperoniPromise we can call makePizza(['pepperoni']), which returns a promise of pizza. In order to get the pizza, the way we can access the resolved value is by chaining a .then onto it.
 
   </script>
 </body>
