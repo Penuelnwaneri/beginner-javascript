@@ -350,10 +350,7 @@ makePizza(['pepperoni','ham']).then((pizza) => {
 
 makePizza(['cheese','pineapple']).then(pizza=>{
   console.log(pizza);
-}).catch(err=>{
-  console.log('Oh noooo!!');
-  console.log(err);
-})
+}).catch(handleError)
 
 // What does that log "Uncaught (in promise)" mean?
 
@@ -363,6 +360,21 @@ makePizza(['cheese','pineapple']).then(pizza=>{
 
 // Catch will pass you the error as a parameter which we will use to log the error as shown above.
 
+// As you see, we no longer get an error logged because we caught and logged the error ourselves.
+
+
+//.then() will only run when the promise resolves successfully, and the catch will only run if the promise doesn't go successfully.
+
+//:Almost always with your promise built functions you must chain a .then() and a .catch() at the end so that if anything goes wrong, you are able to catch it and display it to the user.
+
+// What Wes will usually do is make a function called handleError which will take in the error and log it like so 👇
+
+function handleError(err){
+  console.log('Oh noooo!');
+  console.log(err);
+}
+
+//Now instead of catching the error using the code we had before we can simply replace it as shown above  👆
 
   </script>
 </body>
