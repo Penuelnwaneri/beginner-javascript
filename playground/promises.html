@@ -441,6 +441,13 @@ const dinnerPromise2 = Promise.all([p1, p2]);
 dinnerPromise2.then(results=> {
   console.log(results)
 })
+
+// That is because Promise.all assumes that all of them will go successfully.
+
+// If you want to catch any errors that happen in Promise.all() you would have to catch them like so 👇
+
+const dinnerPromise2 = Promise.all([p1, p2]).catch(handleError);
+
   </script>
 </body>
 
