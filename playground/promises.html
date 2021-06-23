@@ -160,7 +160,7 @@ makePizza(['pepperoni','ham']).then((pizza) => {
 
 // const amountOfTimeToBake = 500 + (toppings.length * 200);
 // Now we will take that variable and pass it to our timeout.
-
+/**
 const makePizza = (toppings =[]) => {
   return new Promise((resolve,reject)=>{
     //wait 5 seconds for the pizza to cook
@@ -170,9 +170,9 @@ const amountOfTimeToBake = 500 + (toppings.length * 200);
      //if something went wrong, we can reject this promise
   });
 }
-
-
-/**console.log('first')
+**/
+/**
+console.log('first')
 makePizza(['pepperoni','ham']).then((pizza) => {
   console.log(pizza)
   return makePizza(['ham','cheese']);
@@ -205,10 +205,10 @@ makePizza(['pepperoni','ham']).then((pizza) => {
 //If you have 10 employees and an oven big enough to cook them all at once, you can do it like so 👇
 
 // Run them Concurrently
-  const pizzaPromise1 = makePizza(['hot peppers', 'onion', 'feta']);
+  /**const pizzaPromise1 = makePizza(['hot peppers', 'onion', 'feta']);
   const pizzaPromise2 = makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
   const pizzaPromise3 = makePizza(['ham', 'cheese']);
-
+**/
 // So how do we know when all of those promises are done? We could do .then() on each of them like so 👇
 /**
 pizzaPromise1.then(pizza => {
@@ -225,9 +225,9 @@ pizzaPromise3.then(pizza => {
 // But those are going to pop into the console in whatever order they are done, which isn't what we want. We can instead make it into a "mega promise" that we then wait upon.
 
 // If you have a few promises and all you care about is when all 3 of them are finished, you can make a mega promises, which we will call a dinnerPromise.
-
+/**
 const dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
-
+**/
 // Promise.all() is a static method because it lives on the "momma" Promise directly.
 
 // It takes an array of "baby" promises which are pizza1, pizza2, pizza3.
@@ -257,11 +257,11 @@ dinnerPromise.then(function (pizzas) {
 }); 
 **/
 //You do not have to destructure those variables in the body of the function, you can destructure the argument directly with square brackets.
-
+/**
 dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
   console.log(hottie, garbagePail, hamAndCheese);
 });
-
+**/
 // That is saying take the first argument and destructure it into a variable named hottie , the second one into garbagePail and so on.
 
 // If you refresh the page you will see it still works.
@@ -273,13 +273,14 @@ dinnerPromise.then(function ([hottie, garbagePail, hamAndCheese]) {
 //Similarly there is Promise.race(). Let's say someone is really hungry and they will take whichever pizza the first pizza is that is ready because they are very hungry.
 
 // We could do this 👇
-
+/**
 const firstPizzaPromise = Promise.race([pizzaPromise1, pizzaPromise2, pizzaPromise3]);
 
 firstPizzaPromise.then(pizza => {
   console.log('You must be hungry, here is the first one ready');
   console.log(pizza);
 })
+**/
 //TO reiterate, Promise.race() will wait for the first one to finish rendering.
 
 //There are also a couple of other ones which we will get into when we talk about error handling.
@@ -287,6 +288,39 @@ firstPizzaPromise.then(pizza => {
 // That is a high level overview of promises.
 
 
+
+const makePizza = (toppings =[]) => {
+  return new Promise((resolve,reject)=>{
+    //wait 5 seconds for the pizza to cook
+const amountOfTimeToBake = 500 + (toppings.length * 200);
+   setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+  },amountOfTimeToBake);
+     //if something went wrong, we can reject this promise
+  });
+}
+
+
+console.log('first')
+makePizza(['pepperoni','ham']).then((pizza) => {
+  console.log(pizza)
+  return makePizza(['ham','cheese']);
+}).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['hot peppers','onions','feta'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['pineapple'])
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza()
+  }).then((pizza) => {
+    console.log(pizza)
+    return makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
+  }).then((pizza) => {
+    console.log('All done! here is your last pizza');
+      console.log(pizza)
+    })
+  console.log('right After')
   </script>
 </body>
 
