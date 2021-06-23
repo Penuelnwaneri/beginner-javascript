@@ -343,6 +343,15 @@ makePizza(['pepperoni','ham']).then((pizza) => {
       console.log(pizza)
     })
   //console.log('right After')
+  
+  //Now let's go to the bottom of the script section and comment out the code we added in the previous lesson when we were doing an example on how to run promises concurrently.
+
+//Below that commented out code add the following 👇
+
+makePizza(['cheese','pineapple']).then(pizza=>{
+  console.log(pizza);
+})
+
   </script>
 </body>
 
