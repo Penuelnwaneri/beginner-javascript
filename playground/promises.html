@@ -405,6 +405,30 @@ makePizza(['cheese','pineapple']).then(pizza=>{
 // you just need to put one catch at the very end that will be able to handle our error.
 
 
+// The thing about an error happening in a promise chain is that where the error happens, it will then bail out of executing the rest of the promise chain.
+
+// If you have 7 or 8 steps in the promise chain and they are all dependent on one another, then that is good because if step 3 in the breaks, you don't want to continue to step 4.
+
+// But sometimes you want to continue even if one of the promises fails. If that is the case, then promise chaining is not what you want to use. Instead, you'd want to use some of the other Promise static methods like Promise.all() or Promise.race().
+
+// Let's do an example. We will start with 2 pizzas.
+
+const p1 = makePizza(['pep']);
+const p2 = makePizza(['pineapple']);
+
+
+// Promise.allSettled()
+
+// We will use a new API that we haven't learned yet called Promise.allSettled().
+
+// Let's start by making a mega promise.
+
+const dinnerPromise2 = Promise.allSettled([p1, p2]);
+
+// Let's just get the results and log them for now.
+dinnerPromise2.then(results=> {
+  console.log(results)
+})
 
   </script>
 </body>
