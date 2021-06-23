@@ -368,13 +368,20 @@ makePizza(['cheese','pineapple']).then(pizza=>{
 //:Almost always with your promise built functions you must chain a .then() and a .catch() at the end so that if anything goes wrong, you are able to catch it and display it to the user.
 
 // What Wes will usually do is make a function called handleError which will take in the error and log it like so 👇
-
+/**
 function handleError(err){
   console.log('Oh noooo!');
   console.log(err);
 }
+**/
 
 //Now instead of catching the error using the code we had before we can simply replace it as shown above  👆
+/**
+makePizza(['cheese','pineapple']).then(pizza=>{
+  console.log(pizza);
+}).catch(handleError);
+**/
+
 
   </script>
 </body>
