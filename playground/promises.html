@@ -394,6 +394,18 @@ makePizza(['cheese','pineapple']).then(pizza=>{
 
 // Go back to our pizzas where we chained a bunch of promises together and modify the pizza with no toppings to instead pass the topping of "pineapple",
 
+
+// What happens there is we go through the chain of promises and then as soon as we hit the code where we try to make a pizza with a pineapple we get the "uncaught in promise" error.
+
+
+// So how do we catch the error?
+
+// Does it mean we have to add a catch after each then? That would be annoying. Thankfully, the answer is no.
+
+// you just need to put one catch at the very end that will be able to handle our error.
+
+
+
   </script>
 </body>
 
