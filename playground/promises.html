@@ -310,9 +310,9 @@ if(toppings.includes('pineapple')){
 const makePizza = (toppings =[]) => {
   return new Promise((resolve,reject)=>{
     // reject if people try with pineapple
-if(toppings.includes('pineapple')){
-  reject("Seriously? Get out 🍍");
-}
+if (toppings.includes('pineapple')) {
+          reject('Seriously? Get out 🍍');
+        }
     //wait 1 seconds for the pizza to cook
 const amountOfTimeToBake = 500 + (toppings.length * 200);
    setTimeout(() => {resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
