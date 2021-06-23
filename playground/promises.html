@@ -451,6 +451,16 @@ const dinnerPromise2 = Promise.all([p1, p2]).catch(handleError);
 dinnerPromise2.then(results=> {
   console.log(results)
 })
+
+//That is probably not what you want because if one of them breaks, you might still want the other one, because those other pizzas are still good.
+
+// Promise.allSettled() will tell you when all the promises are done, regardless of whether they were rejected or resolved.
+
+// There are a few more error handling techniques that we need to use but they do not get introduced until we learn async/await.
+
+// Let's go back and refactor the last exercise we did to use promises instead of callback hell.
+
+
   </script>
 </body>
 
