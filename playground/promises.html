@@ -347,7 +347,10 @@ makePizza(['pepperoni','ham']).then((pizza) => {
   //Now let's go to the top of the script section and comment out the code we added in the previous lesson when we were doing an example on how to run promises concurrently.
 
 //Below that commented out code add the following 👇
-
+function handleError(err){
+  console.log('Oh noooo!');
+  console.log(err);
+}
 makePizza(['cheese','pineapple']).then(pizza=>{
   console.log(pizza);
 }).catch(handleError)
