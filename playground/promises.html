@@ -438,7 +438,9 @@ dinnerPromise2.then(results=> {
 // If we tried that example but with Promise.all() like so, you will see that the code will break.
 
 const dinnerPromise2 = Promise.all([p1, p2]);
-
+dinnerPromise2.then(results=> {
+  console.log(results)
+})
   </script>
 </body>
 
