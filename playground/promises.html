@@ -287,7 +287,24 @@ firstPizzaPromise.then(pizza => {
 
 // That is a high level overview of promises.
 
+/**
+Promises - Error Handling
+In this lesson we will talk about the opposite of resolving, which is rejecting.
 
+When a promise goes awry, and you want to bail on it, you can call the reject function.
+
+Let's go back to our makePizza definition and inside of our promise we need to check whether one of the toppings chosen for the pizza is pineapple.
+
+If it is true, we need to reject the pizza from happening.
+
+For now will only check for lowercase "pineapple" but we will have to try to weed out people who uppercase it as well later. If that condition is met, then we will call reject and pass it "seriously? get out".
+
+To do that we will add the code below.
+
+if(toppings.includes('pineapple')){
+  reject("Seriously? Get out 🍍");
+}
+**/
 
 const makePizza = (toppings =[]) => {
   return new Promise((resolve,reject)=>{
