@@ -430,6 +430,13 @@ dinnerPromise2.then(results=> {
   console.log(results)
 })
 
+
+// As you can see in our results we can see that the first one was fulfilled and the second one was rejected. Fulfilled is another word they use for resolved.
+
+// If we tried that example but with Promise.all() like so, you will see that the code will break.
+
+const dinnerPromise2 = Promise.all([p1, p2]);
+
   </script>
 </body>
 
