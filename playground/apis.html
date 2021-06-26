@@ -12,12 +12,6 @@
   <p class="user"></p>
   <script>
 
-const handleError = (err) => {
-  console.log('Oh no!')
-  console.log('Oh no')
-}
-
-
 /**const endpoint ='https://api.github.com/users/wesbos';
 const wesPromise = fetch(endpoint)
 console.log(wesPromise)
@@ -38,7 +32,10 @@ wesPromise.then(response => {
   console.log(data.location)
 }).catch(handleError)
  **/
- 
+ /**const handleError = (err) => {
+  console.log('Oh no!')
+  console.log('Oh no')
+}
 const endpoint ='https://api.github.com/users/wesbos';
 const userEl = document.querySelector('.user')
 userEl.textContent = 'loading...'
@@ -52,7 +49,23 @@ wesPromise.then(response => {
   console.log(data.location)
   userEl.textContent = `${data.name}-${data.blog}`;
 }).catch(handleError)
-  
+  **/
+  const endpoint ='https://api.github.com/users/wesbos';
+const userEl = document.querySelector('.user')
+
+async function displayUser(username){
+  userEl.textContent = 'loading...'
+const wesPromise = fetch(endpoint)
+wesPromise.then(response => {
+  return response.json()
+}).then(data => {
+  console.log(data)
+  console.log(data.blog)
+  console.log(data.name)
+  console.log(data.location)
+  userEl.textContent = `${data.name}-${data.blog}`;
+}).catch(handleError)
+}
   </script>
 </body>
 
