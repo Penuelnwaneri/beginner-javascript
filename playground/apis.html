@@ -9,12 +9,14 @@
 </head>
 
 <body>
+  <p class="user"></p>
   <script>
 
 const handleError = (err) => {
   console.log('Oh no!')
   console.log('Oh no')
 }
+
 
 /**const endpoint ='https://api.github.com/users/wesbos';
 const wesPromise = fetch(endpoint)
@@ -24,8 +26,9 @@ wesPromise.then(data => {
   }).catch(handleError)
 ***/
 const endpoint ='https://api.github.com/users/wesbos';
+const userEl = document.querySelector('.user')
+
 const wesPromise = fetch(endpoint)
-console.log(wesPromise)
 wesPromise.then(response => {
   return response.json()
 }).then(data => {
@@ -34,6 +37,8 @@ wesPromise.then(response => {
   console.log(data.name)
   console.log(data.location)
 }).catch(handleError)
+  
+  
   
   </script>
 </body>
