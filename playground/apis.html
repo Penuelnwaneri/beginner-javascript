@@ -55,17 +55,19 @@ const userEl = document.querySelector('.user')
 
 async function displayUser(username){
   userEl.textContent = 'loading...'
-const wesPromise = fetch(endpoint)
-wesPromise.then(response => {
-  return response.json()
-}).then(data => {
+const response = await fetch(endpoint)
+const data = await response.json();
   console.log(data)
   console.log(data.blog)
   console.log(data.name)
   console.log(data.location)
   userEl.textContent = `${data.name}-${data.blog}`;
-}).catch(handleError)
 }
+
+const handleError = (err) => {
+  console.log('Oh no!')
+  console.log('Oh no')
+  displayUser('wesbos');
   </script>
 </body>
 
