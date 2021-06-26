@@ -52,12 +52,14 @@ wesPromise.then(response => {
   **/
  
  
-  const endpoint ='https://api.github.com/users/wesbos';
+  const baseEndpoint ='https://api.github.com';
+  const usersEndpoint = `${baseEndpoint}/users`
+  
 const userEl = document.querySelector('.user')
 
 async function displayUser(username){
   userEl.textContent = 'loading...'
-const response = await fetch(endpoint)
+const response = await fetch(`${usersEndpoint}/${username}`)
 const data = await response.json();
   console.log(data)
   console.log(data.blog)
@@ -69,7 +71,9 @@ const data = await response.json();
 const handleError = (err) => {
   console.log('Oh no!')
   console.log('Oh no')
+}
   displayUser('wesbos');
+  
   </script>
 </body>
 
