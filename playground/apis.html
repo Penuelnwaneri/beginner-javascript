@@ -41,7 +41,7 @@ wesPromise.then(response => {
  
 const endpoint ='https://api.github.com/users/wesbos';
 const userEl = document.querySelector('.user')
-
+userEl.textContent = 'loading...'
 const wesPromise = fetch(endpoint)
 wesPromise.then(response => {
   return response.json()
