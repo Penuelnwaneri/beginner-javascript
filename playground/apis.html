@@ -24,6 +24,7 @@
 </style>
 <body>
   <p class="user"></p>
+  <img class="userimg" src="" alt="" />
   <script>
 
 /**const endpoint ='https://api.github.com/users/wesbos';
@@ -70,6 +71,8 @@ wesPromise.then(response => {
   const usersEndpoint = `${baseEndpoint}/users`
   
 const userEl = document.querySelector('.user')
+const userImg = document.querySelector('.userimg')
+
 
 async function displayUser(username){
   userEl.textContent = 'loading...'
@@ -79,7 +82,8 @@ const data = await response.json();
   console.log(data.bio)
   console.log(data.name)
   console.log(data.location)
-  userEl.textContent = `${data.name}-${data.location}`;
+  userEl.textContent =  `username: ${data.name} ||location: ${data.location}`;
+  userImg.src = `${data.avatar_url}`
 }
 
 const handleError = (err) => {
