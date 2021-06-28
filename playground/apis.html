@@ -86,6 +86,7 @@ const data = await response.json();
   userImg.src = `${data.avatar_url}`
   if(data.message === 'Not found'){
     userEl.textContent = `username:${username} does not exist`;
+    userImg.remove()
   }
 }
 
