@@ -87,7 +87,7 @@ const data = await response.json();
   console.log(data.bio)
   console.log(data.name)
   console.log(data.location)
-  userEl.textContent =  `username: ${data.name} || location: ${data.location}`;
+  userEl.textContent =  `username: ${data.name}  location: ${data.location}`;
   userImg.src = `${data.avatar_url}`
   if(data.message === 'Not found'){
     userEl.textContent = `username:${username} does not exist`;
