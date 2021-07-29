@@ -81,7 +81,7 @@ const userImg = document.querySelector('.userimg')
 
 
 async function displayUser(username){
-  userEl.textContent = 'loading...'
+  userEl.textContent = 'fetching data...'
 const response = await fetch(`${usersEndpoint}/${username}`)
 const data = await response.json();
   console.log(data)
